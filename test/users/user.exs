@@ -1,6 +1,7 @@
 defmodule Elixvery.Users.UserTest do
-  alias Elixvery.Users.User
   use ExUnit.Case
+
+  alias Elixvery.Users.User
 
   describe "build/5" do
     test "build the struct when all params are valid" do
