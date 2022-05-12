@@ -6,6 +6,7 @@ defmodule Elixvery.MixProject do
       app: :elixvery,
       version: "0.1.0",
       elixir: "~> 1.13",
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -22,7 +23,13 @@ defmodule Elixvery.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:decimal, "~> 2.0"}
+      {:decimal, "~> 2.0"},
+      {:ex_machina, "~> 2.7.0", only: :test}
     ]
   end
+
+  # This makes sure factories and any other modules in test/support are compiled
+  # when in the test environment.
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 end
