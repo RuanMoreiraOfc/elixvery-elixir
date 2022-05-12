@@ -49,6 +49,23 @@ defmodule Elixvery.Users.UserTest do
       assert response == expected_response
     end
 
+    test "fail to build the struct when cpf is not a string" do
+      name = "User"
+      email = "user@email.com"
+      address = "St Any Street"
+      cpf = 123_456_789_00
+      age = 18
+
+      expected_response = {
+        :error,
+        "Invalid parameters!"
+      }
+
+      response = User.build(name, email, address, cpf, age)
+
+      assert response == expected_response
+    end
+
     test "fail to build the struct when age is under 18" do
       name = "User"
       email = "user@email.com"
