@@ -25,5 +25,28 @@ defmodule Elixvery.Users.UserTest do
 
       assert response == expected_response
     end
+
+    test "build the struct when all params are valid and age is 18" do
+      name = "User"
+      email = "user@email.com"
+      address = "St Any Street"
+      cpf = "12345678900"
+      age = 18
+
+      expected_response = {
+        :ok,
+        %Elixvery.Users.User{
+          address: "St Any Street",
+          age: 18,
+          cpf: "12345678900",
+          email: "user@email.com",
+          name: "User"
+        }
+      }
+
+      response = User.build(name, email, address, cpf, age)
+
+      assert response == expected_response
+    end
   end
 end
