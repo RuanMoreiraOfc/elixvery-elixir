@@ -13,7 +13,7 @@ defmodule Elixvery.Users.UserTest do
 
       expected_response = {
         :ok,
-        %Elixvery.Users.User{
+        %User{
           address: "St Any Street",
           age: 21,
           cpf: "12345678900",
@@ -36,7 +36,7 @@ defmodule Elixvery.Users.UserTest do
 
       expected_response = {
         :ok,
-        %Elixvery.Users.User{
+        %User{
           address: "St Any Street",
           age: 18,
           cpf: "12345678900",
