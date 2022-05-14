@@ -37,6 +37,7 @@ It was used on development:
 
 - [Elixir]
 - [Credo]
+- [ExMachina]
 
 ## :electric_plug: Requirements <span id="id-clone"/>
 
@@ -161,3 +162,4 @@ Made with :heart: by Ruan Moreira de Jesus!
 
 [elixir]: https://elixir-lang.org
 [credo]: https://github.com/rrrene/credo
+[exmachina]: https://github.com/thoughtbot/ex_machina
