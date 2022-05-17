@@ -8,8 +8,7 @@ defmodule Elixvery.Orders.OrderTest do
   @user build(:user)
   @items [
     build(:item),
-    build(
-      :item,
+    build(:item,
       description: "Temaki",
       category: :japonese_food,
       quantity: 2,
@@ -22,6 +21,15 @@ defmodule Elixvery.Orders.OrderTest do
       expected_response = {:ok, build(:order)}
 
       response = Order.build(@user, @items)
+
+      assert response == expected_response
+    end
+
+    test "fail to build the struct when list of items is empty" do
+      items = []
+      expected_response = {:error, "Invalid parameters!"}
+
+      response = Order.build(@user, items)
 
       assert response == expected_response
     end
