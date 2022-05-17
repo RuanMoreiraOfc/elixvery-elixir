@@ -18,5 +18,14 @@ defmodule Elixvery.Orders.ItemTest do
 
       assert response == expected_response
     end
+
+    test "fail to build the struct when category is not valid" do
+      category = :not_edible
+      expected_response = {:error, "Invalid parameters!"}
+
+      response = Item.build(@description, category, @unit_price, @quantity)
+
+      assert response == expected_response
+    end
   end
 end
