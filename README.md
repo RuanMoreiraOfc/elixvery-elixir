@@ -27,7 +27,7 @@ Elixvery
 
 ## About <span id="id-about"/>
 
-**Elixvery** a delivery application...
+**Elixvery** a simple delivery application, with a report generator for the orders.
 
 Project made on Ignite with **[Rafael Camada][btn-tutor]** at Elixir Journey.
 
@@ -38,6 +38,8 @@ It was used on development:
 - [Elixir]
 - [Credo]
 - [ExMachina]
+- [Decimal]
+- [Uuid][elixir_uuid]
 
 ## :electric_plug: Requirements <span id="id-clone"/>
 
@@ -76,18 +78,6 @@ mix deps.get
 
 ```bash
 mix test
-```
-
-###### - to run the project
-
-```bash
-iex -S mix
-```
-
-##### Copy this code to use the module
-
-```elixir
-# placeholder
 ```
 
 ## :balance_scale: License <span id="id-license"/>
@@ -163,3 +153,5 @@ Made with :heart: by Ruan Moreira de Jesus!
 [elixir]: https://elixir-lang.org
 [credo]: https://github.com/rrrene/credo
 [exmachina]: https://github.com/thoughtbot/ex_machina
+[decimal]: https://github.com/ericmj/decimal
+[elixir_uuid]: https://github.com/zyro/elixir-uuid
