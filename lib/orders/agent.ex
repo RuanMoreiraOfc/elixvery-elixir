@@ -7,9 +7,7 @@ defmodule Elixvery.Orders.Agent do
     Agent.start_link(fn -> %{} end, name: __MODULE__)
   end
 
-  def get(uuid) do
-    Agent.get(__MODULE__, &get_order(&1, uuid))
-  end
+  def get(uuid), do: Agent.get(__MODULE__, &get_order(&1, uuid))
 
   def save(%Order{} = order) do
     uuid = UUID.uuid4()
