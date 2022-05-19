@@ -35,5 +35,21 @@ defmodule Elixvery.Orders.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "throws error when cpf is invalid", %{
+      item1: item1,
+      item2: item2
+    } do
+      invalid_cpf = "00000000000"
+      expected_response = {:error, "User not found!"}
+
+      response =
+        CreateOrUpdateOrder.call(%{
+          user_cpf: invalid_cpf,
+          items: [item1, item2]
+        })
+
+      assert response == expected_response
+    end
   end
 end
