@@ -24,7 +24,8 @@ defmodule Elixvery.MixProject do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:decimal, "~> 2.0"},
-      {:ex_machina, "~> 2.7.0", only: :test}
+      {:ex_machina, "~> 2.7.0", only: :test},
+      {:elixir_uuid, "~> 1.2", only: [:dev, :test]}
     ]
   end
 
