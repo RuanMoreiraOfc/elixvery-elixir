@@ -26,5 +26,14 @@ defmodule Elixvery.Users.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "throws error when some parameter is valid", %{user: user} do
+      invalid_age = 17
+      expected_response = {:error, "Invalid parameters!"}
+
+      response = CreateOrUpdateUser.call(%{user | age: invalid_age})
+
+      assert response == expected_response
+    end
   end
 end
