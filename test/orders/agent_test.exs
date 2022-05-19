@@ -27,4 +27,22 @@ defmodule Elixvery.Orders.AgentTest do
       assert response == expected_response
     end
   end
+
+  describe "get/1" do
+    setup do
+      OrderAgent.start_link(nil)
+
+      :ok
+    end
+
+    test "get the order from agent when there is one" do
+      order = build(:order)
+      expected_response = {:ok, order}
+
+      {:ok, uuid} = OrderAgent.save(order)
+      response = OrderAgent.get(uuid)
+
+      assert response == expected_response
+    end
+  end
 end
