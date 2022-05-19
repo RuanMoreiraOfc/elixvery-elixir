@@ -51,5 +51,22 @@ defmodule Elixvery.Orders.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "throws error when some item is invalid", %{
+      user_cpf: userCpf,
+      item1: item1,
+      item2: item2
+    } do
+      invalid_item = %{item2 | quantity: -1}
+      expected_response = {:error, "Not all items are valid!"}
+
+      response =
+        CreateOrUpdateOrder.call(%{
+          user_cpf: userCpf,
+          items: [item1, invalid_item]
+        })
+
+      assert response == expected_response
+    end
   end
 end
