@@ -68,5 +68,19 @@ defmodule Elixvery.Orders.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "throws error when there are no items", %{
+      user_cpf: userCpf
+    } do
+      expected_response = {:error, "Invalid parameters!"}
+
+      response =
+        CreateOrUpdateOrder.call(%{
+          user_cpf: userCpf,
+          items: []
+        })
+
+      assert response == expected_response
+    end
   end
 end
