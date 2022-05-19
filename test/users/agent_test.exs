@@ -29,23 +29,27 @@ defmodule Elixvery.Users.AgentTest do
   end
 
   describe "get/1" do
-    test "get the user from agent when there is one" do
+    setup do
+      UserAgent.start_link(nil)
+
       cpf = "00011122233"
+
+      {:ok, cpf: cpf}
+    end
+
+    test "get the user from agent when there is one", %{cpf: cpf} do
       user = build(:user, cpf: cpf)
       expected_response = {:ok, user}
 
-      UserAgent.start_link(nil)
       UserAgent.save(user)
       response = UserAgent.get(cpf)
 
       assert response == expected_response
     end
 
-    test "fail to get the user from agent when there is no one" do
-      cpf = "00000000000"
+    test "fail to get the user from agent when there is no one", %{cpf: cpf} do
       expected_response = {:error, "User not found!"}
 
-      UserAgent.start_link(nil)
       response = UserAgent.get(cpf)
 
       assert response == expected_response
