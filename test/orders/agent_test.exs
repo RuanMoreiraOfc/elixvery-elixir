@@ -44,5 +44,14 @@ defmodule Elixvery.Orders.AgentTest do
 
       assert response == expected_response
     end
+
+    test "fail to get the order from agent when there is no one" do
+      uuid = UUID.uuid4()
+      expected_response = {:error, "Order not found!"}
+
+      response = OrderAgent.get(uuid)
+
+      assert response == expected_response
+    end
   end
 end
