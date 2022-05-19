@@ -1,9 +1,9 @@
 defmodule Elixvery.Orders.OrderTest do
   use ExUnit.Case
 
-  alias Elixvery.Orders.Order
-
   import Elixvery.Factory
+
+  alias Elixvery.Orders.Order
 
   @user build(:user)
   @items [

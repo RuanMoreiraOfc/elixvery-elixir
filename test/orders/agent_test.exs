@@ -1,9 +1,9 @@
 defmodule Elixvery.Orders.AgentTest do
   use ExUnit.Case
 
-  alias Elixvery.Orders.Agent, as: OrderAgent
-
   import Elixvery.Factory
+
+  alias Elixvery.Orders.Agent, as: OrderAgent
 
   describe "start_link/1" do
     test "starts agent and ensures PID is alive" do

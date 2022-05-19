@@ -1,9 +1,9 @@
 defmodule Elixvery.Users.UserTest do
   use ExUnit.Case
 
-  alias Elixvery.Users.User
-
   import Elixvery.Factory
+
+  alias Elixvery.Users.User
 
   @name "User"
   @email "user@email.com"

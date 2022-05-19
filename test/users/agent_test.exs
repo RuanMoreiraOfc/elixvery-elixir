@@ -1,9 +1,9 @@
 defmodule Elixvery.Users.AgentTest do
   use ExUnit.Case
 
-  alias Elixvery.Users.Agent, as: UserAgent
-
   import Elixvery.Factory
+
+  alias Elixvery.Users.Agent, as: UserAgent
 
   describe "start_link/1" do
     test "starts agent and ensures PID is alive" do

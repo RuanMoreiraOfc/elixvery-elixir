@@ -1,9 +1,9 @@
 defmodule Elixvery.Orders.ItemTest do
   use ExUnit.Case
 
-  alias Elixvery.Orders.Item
-
   import Elixvery.Factory
+
+  alias Elixvery.Orders.Item
 
   @description "Pepperoni Pizza"
   @category :pizza
