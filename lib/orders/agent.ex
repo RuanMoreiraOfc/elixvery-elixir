@@ -9,6 +9,8 @@ defmodule Elixvery.Orders.Agent do
 
   def get(uuid), do: Agent.get(__MODULE__, &get_order(&1, uuid))
 
+  def get_all, do: Agent.get(__MODULE__, & &1)
+
   def save(%Order{} = order) do
     uuid = UUID.uuid4()
 
