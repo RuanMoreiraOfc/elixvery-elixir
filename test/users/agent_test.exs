@@ -27,4 +27,18 @@ defmodule Elixvery.Users.AgentTest do
       assert response == expected_response
     end
   end
+
+  describe "get/1" do
+    test "get the user from agent when there is one" do
+      cpf = "00011122233"
+      user = build(:user, cpf: cpf)
+      expected_response = {:ok, user}
+
+      UserAgent.start_link(nil)
+      UserAgent.save(user)
+      response = UserAgent.get(cpf)
+
+      assert response == expected_response
+    end
+  end
 end
