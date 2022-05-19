@@ -40,5 +40,15 @@ defmodule Elixvery.Users.AgentTest do
 
       assert response == expected_response
     end
+
+    test "fail to get the user from agent when there is no one" do
+      cpf = "00000000000"
+      expected_response = {:error, "User not found!"}
+
+      UserAgent.start_link(nil)
+      response = UserAgent.get(cpf)
+
+      assert response == expected_response
+    end
   end
 end
