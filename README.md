@@ -29,7 +29,7 @@ Elixvery
 
 **Elixvery** a simple delivery application, with a report generator for the orders.
 
-Project made on Ignite with **[Rafael Camada][btn-tutor]** at Elixir Journey.
+Project made on Ignite with **[Rafael Camarda][btn-tutor]** at Elixir Journey.
 
 ## :triangular_ruler: Technology <span id="id-about"/>
 
